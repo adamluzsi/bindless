@@ -1,13 +1,4 @@
-bindless
-========
-
-run ruby procs with different binds on the fly!
-
-simple use
-
-```ruby
-
-require_relative "bindless"
+require_relative "../lib/bindless"
 
 test_proc= Proc.new{
   self.hello_world
@@ -27,5 +18,3 @@ end
 
 Test.test_call test_proc
 #> "hello world!"
-
-```
