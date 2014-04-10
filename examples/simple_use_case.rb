@@ -1,4 +1,4 @@
-require_relative "../lib/bindless"
+require "bindless"
 
 test_proc= Proc.new{
   self.hello_world

@@ -1,10 +1,18 @@
-class Object
+module Bindless
 
-  # return the object Binding
-  def binding?
-    return binding
+  module EXT
+    module Object
+
+      # return the object Binding
+      def binding?
+        return binding
+      end
+
+      alias :get_binding :binding?
+
+    end
   end
 
-  alias :get_binding :binding?
-
 end
+
+Object.__send__ :include, Bindless::EXT::Object
