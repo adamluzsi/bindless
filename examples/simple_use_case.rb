@@ -1,9 +1,5 @@
 require "bindless"
 
-test_proc= Proc.new{
-  self.hello_world
-}
-
 class Test
 
   def self.hello_world
@@ -16,5 +12,8 @@ class Test
 
 end
 
-Test.test_call test_proc
 #> "hello world!"
+
+Test.test_call Proc.new { self.hello_world }
+Test.test_call lambda   { self.hello_world }
+Test.test_call ->       { self.hello_world }
